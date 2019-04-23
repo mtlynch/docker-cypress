@@ -1,4 +1,4 @@
-FROM cypress/base:10
+FROM cypress/browsers:chrome69
 
 # Supress progressive status output from Cypress.
 ENV CI=1
