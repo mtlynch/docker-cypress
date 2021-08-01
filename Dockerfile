@@ -80,7 +80,6 @@ RUN cypress info && \
 
 # give every user read access to the "/root" folder where the binary is cached
 # we really only need to worry about the top folder, fortunately
-RUN ls -la /root
 RUN chmod 755 /root
 
 # Show where Node loads required modules from
