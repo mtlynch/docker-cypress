@@ -73,10 +73,10 @@ RUN cypress verify
 
 # Cypress cache and installed version
 # should be in the root user's home folder
-RUN cypress cache path
-RUN cypress cache list
-RUN cypress info
-RUN cypress version
+RUN cypress cache path && \
+  cypress cache list
+RUN cypress info && \
+  cypress version
 
 # give every user read access to the "/root" folder where the binary is cached
 # we really only need to worry about the top folder, fortunately
