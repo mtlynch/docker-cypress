@@ -16,8 +16,9 @@ jobs:
           command: |
             docker run \
               --name "${CONTAINER_NAME}" \
+              --entrypoint cypress \
               "${IMAGE_NAME}" \
-                --version
+                version
 workflows:
   version: 2
   all-tests:
