@@ -1,0 +1,24 @@
+version: 2.1
+jobs:
+  build:
+    machine:
+      image: ubuntu-2004:202107-01
+    environment:
+      IMAGE_NAME: cypress
+    steps:
+      - checkout
+      - run:
+          name: Build dockerfile
+          command: docker build --tag "${IMAGE_NAME}" .
+      - run:
+          name: Make sure we can print the version information
+          command: |
+            docker run \
+              --entrypoint cypress \
+              "${IMAGE_NAME}" \
+                version
+workflows:
+  version: 2
+  all-tests:
+    jobs:
+      - build
