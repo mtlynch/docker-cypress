@@ -16,8 +16,16 @@ RUN apt-get update && \
     xvfb \
     # install emoji font
     fonts-noto-color-emoji \
+    # Chrome dependencies
+    ca-certificates \
+    fonts-liberation \
+    libappindicator3-1 \
+    libcurl4 \
+    xdg-utils \
+    wget \
   # clean up
-  && rm -rf /usr/share/doc && \
+  && \
+  rm -rf /usr/share/doc && \
   rm -rf /usr/share/man && \
   rm -rf /var/lib/apt/lists/*
 
@@ -35,6 +43,17 @@ ENV npm_config_unsafe_perm true
 RUN node -p process.versions
 
 USER root
+
+# install Chrome browser
+ARG CHROME_VERSION=91.0.4472.114
+RUN wget -O /usr/src/google-chrome-stable_current_amd64.deb "http://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_${CHROME_VERSION}-1_amd64.deb" && \
+  dpkg -i /usr/src/google-chrome-stable_current_amd64.deb && \
+  # clean up
+  rm -f /usr/src/google-chrome-stable_current_amd64.deb && \
+  rm -rf /usr/share/doc && \
+  rm -rf /usr/share/man && \
+  rm -rf /var/lib/apt/lists/*
+RUN google-chrome --version
 
 # "fake" dbus address to prevent errors
 # https://github.com/SeleniumHQ/docker-selenium/issues/87
