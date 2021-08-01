@@ -23,9 +23,6 @@ RUN apt-get update && \
 
 RUN npm --version
 
-RUN npm install -g yarn@latest --force
-RUN yarn --version
-
 # a few environment variables to make NPM installs easier
 # good colors for most applications
 ENV TERM xterm
