@@ -17,7 +17,7 @@ RUN apt-get update && \
     # install emoji font
     fonts-noto-color-emoji \
   # clean up
-  rm -rf /usr/share/doc && \
+  && rm -rf /usr/share/doc && \
   rm -rf /usr/share/man && \
   rm -rf /var/lib/apt/lists/*
 
