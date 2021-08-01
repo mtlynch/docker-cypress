@@ -5,7 +5,6 @@ jobs:
       image: ubuntu-2004:202107-01
     environment:
       IMAGE_NAME: cypress
-      CONTAINER_NAME: cypress
     steps:
       - checkout
       - run:
@@ -15,7 +14,6 @@ jobs:
           name: Make sure we can print the version information
           command: |
             docker run \
-              --name "${CONTAINER_NAME}" \
               --entrypoint cypress \
               "${IMAGE_NAME}" \
                 version
