@@ -82,7 +82,7 @@ RUN npm config -g set user $(whoami)
 
 # point Cypress at the /root/cache no matter what user account is used
 # see https://on.cypress.io/caching
-ARG CYPRESS_VERSION=8.1.0
+ARG CYPRESS_VERSION=8.3.1
 ENV CYPRESS_CACHE_FOLDER=/root/.cache/Cypress
 RUN npm install -g "cypress@${CYPRESS_VERSION}"
 RUN cypress verify
