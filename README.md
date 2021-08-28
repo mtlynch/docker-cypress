@@ -21,10 +21,12 @@ These images are similar to the official [`cypress/included`](https://hub.docker
 
 These contain just Cypress.io without any browsers.
 
+* 8.3.1
 * 8.1.0
 
 ### Chrome
 
 These contain Cypress.io and the Google Chrome browser.
 
+* 8.3.1-chrome91
 * 8.1.0-chrome91
