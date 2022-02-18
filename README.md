@@ -29,5 +29,6 @@ These contain just Cypress.io without any browsers.
 
 These contain Cypress.io and the Google Chrome browser.
 
+* 9.5.0-chrome98
 * 8.3.1-chrome91
 * 8.1.0-chrome91
