@@ -45,7 +45,7 @@ RUN node -p process.versions
 USER root
 
 # install Chrome browser
-ARG CHROME_VERSION=91.0.4472.114
+ARG CHROME_VERSION=98.0.4758.102
 RUN wget -O /usr/src/google-chrome-stable_current_amd64.deb "http://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_${CHROME_VERSION}-1_amd64.deb" && \
   dpkg -i /usr/src/google-chrome-stable_current_amd64.deb && \
   # clean up
