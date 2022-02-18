@@ -21,6 +21,7 @@ These images are similar to the official [`cypress/included`](https://hub.docker
 
 These contain just Cypress.io without any browsers.
 
+* 9.5.0
 * 8.3.1
 * 8.1.0
 
